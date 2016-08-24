@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
@@ -20,19 +20,41 @@
             <RowDefinition Height="7.5*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <Pivot x:Name="PivotContact" Grid.RowSpan="2" Grid.ColumnSpan="3">
-            <Style TargetType="PivotHeaderItem">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="PivotHeaderItem">
-                            
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
             <PivotItem Header="PivotItem 0">
-                <Grid/>
+                <Grid>
+                    <ListView x:Name="ListViewContact">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Margin" Value="0,5"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Width="322">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                            <RowDefinition Height="1*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Ellipse Grid.RowSpan="2" Grid.Column="0" MinWidth="45" MinHeight="45">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="Assets\StoreLogo.png" />
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding}"></TextBlock>
+                                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding}"></TextBlock>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
             </PivotItem>
             <PivotItem Header="PivotItem 1">
                 <Grid/>

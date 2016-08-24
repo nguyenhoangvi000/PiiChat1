@@ -22,9 +22,16 @@ namespace PiiChat
     /// </summary>
     public sealed partial class ContactList : Page
     {
+        public List<string> contactList;
         public ContactList()
         {
             this.InitializeComponent();
+            contactList = new List<string>()
+            {
+                "ABC",
+                "DEF"
+            };
+            ListViewContact.ItemsSource = contactList;
         }
     }
 }
