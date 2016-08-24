@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="PiiChat.RegisterHorizontal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PiiChat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Color x:Key="Color1">#002EA1FC</Color>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <Image x:Name="image" Height="89" Margin="270,25,262,0" VerticalAlignment="Top" Source="Assets/Square150x150Logo.png" d:LayoutOverrides="VerticalAlignment, LeftPosition, RightPosition"/>
+        <Grid Margin="216,114,204,124" BorderThickness="1,1,2,2" Background="White" CornerRadius="3" d:LayoutOverrides="VerticalAlignment, LeftPosition, RightPosition">
+            <Grid.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
+                    <GradientStop Color="#FFFBFBFB"/>
+                </LinearGradientBrush>
+            </Grid.BorderBrush>
+            <TextBox x:Name="txtReTypePassword" PlaceholderText="Họ" Height="20" Margin="11,0,0,94" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" InputScope="Password" BorderThickness="0,0,0,1" BorderBrush="#FFE2DBDB" MinHeight="20" FontSize="9" HorizontalAlignment="Left" Width="80" Padding="10,3,6,3"/>
+            <TextBox x:Name="txtReTypePassword_Copy" PlaceholderText="Tên" Height="20" Margin="0,0,18,94" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" InputScope="Password" BorderThickness="0,0,0,1" BorderBrush="#FFE2DBDB" MinHeight="20" FontSize="9" HorizontalAlignment="Right" Width="100" d:LayoutOverrides="TopMargin, BottomMargin" Padding="10,3,6,3"/>
+            <TextBox x:Name="txtReTypePassword_Copy1" PlaceholderText="Họ" Height="20" Margin="11,0,18,73" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" InputScope="Password" BorderThickness="0,0,0,1" BorderBrush="#FFE2DBDB" MinHeight="20" FontSize="9" Padding="10,3,6,3" d:LayoutOverrides="LeftPosition, RightPosition"/>
+            <TextBox x:Name="txtReTypePassword_Copy2" PlaceholderText="Họ" Height="20" Margin="11,0,18,52" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" InputScope="Password" BorderThickness="0,0,0,1" BorderBrush="#FFE2DBDB" MinHeight="20" FontSize="9" Padding="10,3,6,3" d:LayoutOverrides="LeftPosition, RightPosition"/>
+            <CheckBox x:Name="ckKeepLogin" Content="Duy trì đăng nhập" Margin="24,130,0,113" VerticalAlignment="Stretch" Width="185" d:LayoutOverrides="TopPosition, BottomPosition"/>
+            <Button x:Name="btnRegister" Content="ĐĂNG KÍ" HorizontalAlignment="Stretch" Height="26" Margin="65,0,62,10" VerticalAlignment="Bottom" Background="#2EA1FC" Foreground="#FFF0F0F0" d:LayoutOverrides="VerticalAlignment, LeftPosition, RightPosition" FontSize="9"/>
+        </Grid>
+        <Grid Height="76" VerticalAlignment="Bottom" Margin="216,0,104,43" d:LayoutOverrides="LeftPosition, RightPosition" d:IsLocked="True">
+            <TextBlock x:Name="txtInfo" Height="24" Margin="10,0,0,29" TextWrapping="Wrap" Text="Bạn chưa có tài khoản" VerticalAlignment="Bottom" FontSize="9" HorizontalAlignment="Left" Width="148" d:LayoutOverrides="HorizontalAlignment"/>
+            <TextBlock x:Name="txtInfoRegister" Height="13" Margin="105,0,157,40" TextWrapping="Wrap" Text="Đăng kí ngay," VerticalAlignment="Bottom" Foreground="#FF2EA1FC" FontSize="9" d:LayoutOverrides="LeftPosition, RightPosition"/>
+            <TextBlock x:Name="txtInfoForgotPass" Height="13" Margin="0,0,60,40" TextWrapping="Wrap" Text="Lấy lại mật khẩu" VerticalAlignment="Bottom" Foreground="#FF2EA1FC" FontSize="9" HorizontalAlignment="Right" Width="92"/>
+            <TextBlock x:Name="txtInfo1" Margin="10,0,0,20" TextWrapping="Wrap" Text="Tải ứng dụng trên" FontSize="9" HorizontalAlignment="Left" Width="80" Height="16" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment"/>
+            <TextBlock x:Name="txtInfoiOS" Margin="89,0,0,20" TextWrapping="Wrap" Text="iOS," Foreground="#FF2EA1FC" FontSize="9" HorizontalAlignment="Left" Width="34" Height="16" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="txtInfoWindows10" Margin="110,0,157,20" TextWrapping="Wrap" Text="Windows 10," Foreground="#FF2EA1FC" FontSize="9" Height="16" VerticalAlignment="Bottom" d:LayoutOverrides="LeftPosition, RightPosition"/>
+            <TextBlock x:Name="txtInfoAndroid" Margin="0,0,81,20" TextWrapping="Wrap" Text="Android" Foreground="#FF2EA1FC" FontSize="9" HorizontalAlignment="Right" Height="16" VerticalAlignment="Bottom" Width="71"/>
+        </Grid>
+
+    </Grid>
+</Page>

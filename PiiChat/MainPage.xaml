@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="PiiChat.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PiiChat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Color x:Key="Color1">#002EA1FC</Color>
+    </Page.Resources>
+
+    <Grid Background="White" d:IsLocked="True">
+        <Image x:Name="image" Height="155" Margin="91,48,98,0" VerticalAlignment="Top" Source="Assets/Square150x150Logo.png"/>
+        <Grid Margin="10,208,10,240" BorderThickness="1,1,2,2" Background="White" CornerRadius="3">
+            <Grid.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
+                    <GradientStop Color="#FFFBFBFB"/>
+                </LinearGradientBrush>
+            </Grid.BorderBrush>
+            <TextBox x:Name="txtUsername" PlaceholderText="Tài khoản" Height="32" Margin="22,27,13,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" InputScope="Text" BorderBrush="#FFE2DBDB" BorderThickness="0,0,0,1"/>
+            <TextBox x:Name="txtPassword" PlaceholderText="Mật khẩu" Height="32" Margin="23,81,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition" InputScope="Password" BorderThickness="0,0,0,1" BorderBrush="#FFE2DBDB"/>
+            <Button x:Name="btnLogin" Content="Đăng nhập" HorizontalAlignment="Stretch" Height="36" Margin="105,0,92,20" VerticalAlignment="Bottom" Background="#2EA1FC" Foreground="#FFF0F0F0" d:LayoutOverrides="VerticalAlignment, TopMargin, BottomMargin, LeftPosition, RightPosition"/>
+            <CheckBox x:Name="ckKeepLogin" Content="Duy trì đăng nhập" Margin="24,130,0,113" VerticalAlignment="Stretch" Width="185" d:LayoutOverrides="TopPosition, BottomPosition"/>
+        </Grid>
+        <Grid Height="75" VerticalAlignment="Bottom" Margin="0,0,0,160">
+            <TextBlock x:Name="txtInfo" Height="24" Margin="10,0,0,39" TextWrapping="Wrap" Text="Bạn chưa có tài khoản" VerticalAlignment="Bottom" FontSize="13" HorizontalAlignment="Left" Width="148" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+            <TextBlock x:Name="txtInfoRegister" Height="24" Margin="142,0,106,39" TextWrapping="Wrap" Text="Đăng kí ngay," VerticalAlignment="Bottom" d:LayoutOverrides="LeftPosition, RightPosition" Foreground="#FF2EA1FC" FontSize="13"/>
+            <TextBlock x:Name="txtInfoForgotPass" Height="24" Margin="0,0,33,39" TextWrapping="Wrap" Text="Lấy lại mật khẩu" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="94" Foreground="#FF2EA1FC" FontSize="13"/>
+            <TextBlock x:Name="txtInfo1" Height="24" Margin="10,0,0,15" TextWrapping="Wrap" Text="Tải ứng dụng trên" VerticalAlignment="Bottom" FontSize="13" HorizontalAlignment="Left" Width="148" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin"/>
+            <TextBlock x:Name="txtInfoiOS" Height="24" Margin="119,0,0,15" TextWrapping="Wrap" Text="iOS," VerticalAlignment="Bottom" Foreground="#FF2EA1FC" FontSize="13" HorizontalAlignment="Left" Width="34"/>
+            <TextBlock x:Name="txtInfoWindows10" Height="24" Margin="146,0,117,15" TextWrapping="Wrap" Text="Windows 10," VerticalAlignment="Bottom" Foreground="#FF2EA1FC" FontSize="13" d:LayoutOverrides="LeftPosition, RightPosition"/>
+            <TextBlock x:Name="txtInfoAndroid" Height="24" Margin="0,0,39,15" TextWrapping="Wrap" Text="Android" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="94" Foreground="#FF2EA1FC" FontSize="13" d:LayoutOverrides="TopMargin, BottomMargin"/>
+        </Grid>
+
+    </Grid>
+</Page>
