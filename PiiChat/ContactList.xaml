@@ -7,8 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -24,33 +22,37 @@
         <Pivot x:Name="PivotContact" Grid.RowSpan="2" Grid.ColumnSpan="3">
             <PivotItem Header="PivotItem 0">
                 <Grid>
-                    <ListView x:Name="ListViewContact">
+                    <ListView x:Name="ListViewContact" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
+                                <Setter Property="Padding" Value="0"></Setter>
                                 <Setter Property="Margin" Value="0,5"/>
+                                <Setter Property="MinHeight" Value="60"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
                             </Style>
                         </ListView.ItemContainerStyle>
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal" Width="322">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="1*"></ColumnDefinition>
-                                            <ColumnDefinition Width="1*"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="1*"></RowDefinition>
-                                            <RowDefinition Height="1*"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Ellipse Grid.RowSpan="2" Grid.Column="0" MinWidth="45" MinHeight="45">
+                                <Grid BorderBrush="Aqua" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Ellipse Grid.Column="0" MinWidth="45" MinHeight="45">
                                             <Ellipse.Fill>
                                                 <ImageBrush ImageSource="Assets\StoreLogo.png" />
                                             </Ellipse.Fill>
                                         </Ellipse>
-                                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding}"></TextBlock>
-                                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding}"></TextBlock>
-                                    </Grid>
-                                </StackPanel>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock Margin="0,0,15,0" Text="{Binding}"></TextBlock>
+                                            <TextBlock Margin="0,38,40,0" Text="{Binding}"></TextBlock>
+                                        </Grid>
+                                    </StackPanel>
+                                </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
@@ -60,7 +62,5 @@
                 <Grid/>
             </PivotItem>
         </Pivot>
-
-
     </Grid>
 </Page>

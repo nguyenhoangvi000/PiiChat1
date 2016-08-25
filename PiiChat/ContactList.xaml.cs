@@ -29,6 +29,12 @@ namespace PiiChat
             contactList = new List<string>()
             {
                 "ABC",
+                "DEF",
+                "ABC",
+                "DEF",
+                "ABC",
+                "DEF",
+                "ABC",
                 "DEF"
             };
             ListViewContact.ItemsSource = contactList;

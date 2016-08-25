@@ -5,24 +5,29 @@
     xmlns:local="using:PiiChat"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Width="Auto"
+    Height="Auto">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         <Grid x:Name="FirstGrid" Grid.Column="0" Grid.Row="0" Background="#0078d7" >
-            <Image Source="Assets/Square44x44Logo.png"/>
+            <Ellipse Grid.RowSpan="2" Grid.Column="0" Width="Auto" Height="Auto">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Assets\StoreLogo.png" />
+                </Ellipse.Fill>
+            </Ellipse>
         </Grid>
         <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="#107C10" >
-            <TextBlock FontSize="15" Margin="5,5,0,0" Text="Username"></TextBlock>
-            <TextBlock FontSize="14" Margin="5,45,0,0" Text="Overview"></TextBlock>
+            <TextBlock FontSize="15" Margin="0,5,0,0" Text="{Binding}" HorizontalAlignment="Right" Width="283"></TextBlock>
+            <TextBlock FontSize="14" Margin="5,45,0,0" Text="{Binding}"></TextBlock>
         </Grid>
-
     </Grid>
 </UserControl>

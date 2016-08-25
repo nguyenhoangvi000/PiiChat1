@@ -23,12 +23,14 @@
             <TextBlock Margin="17,17,-1,0" x:Name="txbUsernameTarget" Text="Vĩ Hoàng" SelectionHighlightColor="White" Foreground="White" FontSize="18" FontStretch="UltraCondensed"/>
         </Border>
         <Border Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <ListView x:Name="ListMessage" ItemsSource="{Binding}">
+            <ListView x:Name="ListMessage" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="Margin" Value="0,6,0,6"/>
-                        <Setter Property="Height" Value="50"/>
+                        <Setter Property="Margin" Value="0,1,0,1"/>
+                        <Setter Property="Height" Value="Auto"/>
                         <Setter Property="HorizontalAlignment" Value="Left"/>
+                        <!--Binding trái phải-->                        
+                        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
                     </Style>
                 </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
@@ -39,8 +41,13 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
+                                <!--<Ellipse Grid.Column="0" Width="45" Height="45" MaxHeight="45" MinHeight="45">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="Assets\StoreLogo.png" />
+                                    </Ellipse.Fill>
+                                </Ellipse>-->
                                 <TextBlock Grid.Column="1" Text="{Binding content}" Padding="15,0,15,0"/>
-                                
+                                <!--<Image Grid.Column="1" Source="Assets\Wide310x150Logo.scale-200.png" MaxHeight="100" MinHeight="100" Width="Auto" Height="Auto"></Image>-->
                             </Grid>
                         </StackPanel>
                     </DataTemplate>
