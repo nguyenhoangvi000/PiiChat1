@@ -29,7 +29,6 @@ namespace PiiChat
         {
             this.InitializeComponent();
             dataSource = new ObservableCollection<MessageContent>();
-            ListMessage.ItemsSource = dataSource;
         }
 
         private void SendMessage(object sender, RoutedEventArgs e)
@@ -46,11 +45,9 @@ namespace PiiChat
 
         private void txtMessage_KeyDown(object sender, KeyRoutedEventArgs e)
         {
-            if (e.Key==Windows.System.VirtualKey.Enter)
+            if (e.Key == Windows.System.VirtualKey.Enter)
             {
-                addMessage(txtMessage.Text);
-                txtMessage.Text = "";
-                ListMessage.ItemsSource = dataSource;
+                SendMessage(sender, e);
             }
         }
     }

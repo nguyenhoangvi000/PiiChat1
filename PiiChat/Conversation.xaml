@@ -28,9 +28,9 @@
                     <Style TargetType="ListViewItem">
                         <Setter Property="Margin" Value="0,1,0,1"/>
                         <Setter Property="Height" Value="Auto"/>
-                        <Setter Property="HorizontalAlignment" Value="Left"/>
-                        <!--Binding trái phải-->                        
-                        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                        <Setter Property="Background" Value="{ThemeResource ApplicationPageBackgroundThemeBrush}"></Setter>
+                        <!--Binding trái phải-->
+                        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
                     </Style>
                 </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
@@ -41,12 +41,20 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <!--<Ellipse Grid.Column="0" Width="45" Height="45" MaxHeight="45" MinHeight="45">
+                                <Ellipse Grid.Column="0" Width="45" Height="45" MaxHeight="45" MinHeight="45">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="Assets\StoreLogo.png" />
                                     </Ellipse.Fill>
-                                </Ellipse>-->
-                                <TextBlock Grid.Column="1" Text="{Binding content}" Padding="15,0,15,0"/>
+                                </Ellipse>
+                                <Grid Padding="0,0,5,0" CornerRadius="5" Grid.Column="1" BorderBrush="#CED6DA" BorderThickness="1" Background="#E5EEF3" Margin="0,0,5,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"></RowDefinition>
+                                        <RowDefinition Height="1*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0"  Text="{Binding content}" Padding="15,0,15,0"/>
+                                    <TextBlock Grid.Row="1"  Text="{Binding time}" FontSize="11"  Padding="15,0,15,20"/>
+                                </Grid>
+
                                 <!--<Image Grid.Column="1" Source="Assets\Wide310x150Logo.scale-200.png" MaxHeight="100" MinHeight="100" Width="Auto" Height="Auto"></Image>-->
                             </Grid>
                         </StackPanel>
@@ -62,7 +70,7 @@
                     <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox x:Name="txtMessage" Grid.Column="1" KeyDown="txtMessage_KeyDown"></TextBox>
+                <TextBox BorderThickness="1" x:Name="txtMessage" Grid.Column="1" ></TextBox>
                 <Button Click="SendMessage" Grid.Column="2" Content="Send"/>
 
             </Grid>
