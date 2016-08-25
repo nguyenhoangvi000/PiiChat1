@@ -27,6 +27,8 @@
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="Margin" Value="0,1,0,1"/>
+                        <Setter Property="Background" Value="Transparent"></Setter>
+                        <!--<Setter Property="MaxWidth" Value="300"></Setter>-->
                         <Setter Property="Height" Value="Auto"/>
                         <Setter Property="Background" Value="{ThemeResource ApplicationPageBackgroundThemeBrush}"></Setter>
                         <!--Binding trái phải-->
@@ -51,7 +53,7 @@
                                         <RowDefinition Height="2*"></RowDefinition>
                                         <RowDefinition Height="1*"></RowDefinition>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Grid.Row="0"  Text="{Binding content}" Padding="15,0,15,0"/>
+                                    <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding content}" Padding="15,0,15,0"/>
                                     <TextBlock Grid.Row="1"  Text="{Binding time}" FontSize="11"  Padding="15,0,15,20"/>
                                 </Grid>
 
@@ -62,7 +64,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Border>
-        <Border Padding="0" Grid.Row="2" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Border BorderThickness="1" Padding="0" Grid.Row="2" Background="{ThemeResource AppBarBorderThemeBrush}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.5*"/>
@@ -70,8 +72,10 @@
                     <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox BorderThickness="1" x:Name="txtMessage" Grid.Column="1" ></TextBox>
-                <Button Click="SendMessage" Grid.Column="2" Content="Send"/>
+                <TextBox BorderThickness="0" x:Name="txtMessage" Grid.Column="1" HorizontalAlignment="Left" Margin="0.333,0,-0.667,0" Width="251" ></TextBox>
+                <Button Background="Transparent" BorderThickness="0" Click="SendMessage" Grid.Column="2"  Content="&#xE122;" HorizontalAlignment="Right" Margin="-0.333,17,6,17">
+                    
+                </Button>
 
             </Grid>
         </Border>
