@@ -20,26 +20,20 @@ namespace PiiChat
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ContactList : Page
+    public sealed partial class ChatRoom : Page
     {
         public List<string> contactListRecent;
 
-        public ContactList()
+        public ChatRoom()
         {
             this.InitializeComponent();
             contactListRecent = new List<string>()
             {
-                "ABC",
-                "DEF",
-                "ABC",
-                "DEF",
-                "ABC",
-                "DEF",
-                "ABC",
-                "DEF"
+                "Tìm bạn 4 phương",
+                "Học tiếng Anh tiếng U",
+                "Tâm sự mỏng",
             };
             ListViewContact.ItemsSource = contactListRecent;
-            ListViewContacts.ItemsSource = contactListRecent;
         }
     }
 }
