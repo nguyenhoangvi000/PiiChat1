@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PiiChat.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,6 +26,7 @@ namespace PiiChat
     {
         public List<string> contactListRecent;
 
+
         public ContactList()
         {
             this.InitializeComponent();
@@ -39,7 +42,10 @@ namespace PiiChat
                 "DEF"
             };
             ListViewContact.ItemsSource = contactListRecent;
-            ListViewContacts.ItemsSource = contactListRecent;
+            //ListViewContacts.ItemsSource = contactListRecent;
+            MyItems.Source = Header.GetItemsGrouped();
         }
+
+        
     }
 }

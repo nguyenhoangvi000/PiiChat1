@@ -9,10 +9,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition>
-            </RowDefinition>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="8*"/>
-            <RowDefinition/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -26,13 +25,20 @@
             <ListView x:Name="ListMessage" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="Margin" Value="0,1,0,1"/>
+                        <Setter Property="Margin" Value="0,3,0,3"/>
                         <Setter Property="Background" Value="Transparent"></Setter>
                         <!--<Setter Property="MaxWidth" Value="300"></Setter>-->
                         <Setter Property="Height" Value="Auto"/>
                         <Setter Property="Background" Value="{ThemeResource ApplicationPageBackgroundThemeBrush}"></Setter>
                         <!--Binding trái phải-->
-                        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
                     </Style>
                 </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
@@ -43,12 +49,12 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Ellipse Grid.Column="0" Width="45" Height="45" MaxHeight="45" MinHeight="45">
+                                <Ellipse Grid.Column="1" Width="45" Height="45" MaxHeight="45" MinHeight="45">
                                     <Ellipse.Fill>
                                         <ImageBrush ImageSource="Assets\StoreLogo.png" />
                                     </Ellipse.Fill>
                                 </Ellipse>
-                                <Grid Padding="0,0,5,0" CornerRadius="5" Grid.Column="1" BorderBrush="#CED6DA" BorderThickness="1" Background="#E5EEF3" Margin="0,0,5,0">
+                                <Grid Padding="0,0,5,0" CornerRadius="5" Grid.Column="0" BorderBrush="#CED6DA" BorderThickness="1" Background="#E5EEF3" Margin="0,0,5,0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="2*"></RowDefinition>
                                         <RowDefinition Height="1*"></RowDefinition>
@@ -68,15 +74,12 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.5*"/>
-                    <ColumnDefinition  Width="7*"/>
+                    <ColumnDefinition  Width="9*"/>
                     <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
-
-                <TextBox BorderThickness="0" x:Name="txtMessage" Grid.Column="1" HorizontalAlignment="Left" Margin="0.333,0,-0.667,0" Width="251" ></TextBox>
-                <Button Background="Transparent" BorderThickness="0" Click="SendMessage" Grid.Column="2"  Content="&#xE122;" HorizontalAlignment="Right" Margin="-0.333,17,6,17">
-                    
-                </Button>
-
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" FontFamily="Segoe UI Symbol" HorizontalAlignment="Center" Width="Auto" Text="&#xE11D;"></TextBlock>
+                <TextBox BorderThickness="0" x:Name="txtMessage" VerticalAlignment="Stretch" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" ></TextBox>
+                <Button Background="Transparent" BorderThickness="0" Click="SendMessage" Grid.Column="2" FontSize="14"  Content="&#xE122;" FontFamily="Segoe UI Symbol" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,0,0,0"/>
             </Grid>
         </Border>
 
