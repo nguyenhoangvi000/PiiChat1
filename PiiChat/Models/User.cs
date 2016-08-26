@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace PiiChat.Models
 {
-    public class Text : INotifyPropertyChanged
+    public class User : INotifyPropertyChanged
     {
-        private string _title;
+        private string _username;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Text(string name)
+        public User(string name)
         {
             this.Title = name;
         }
 
         public string Title
         {
-            get { return _title; }
+            get { return _username; }
             set
             {
-                _title = value;
+                _username = value;
                 RaisePropertyChanged("Title");
             }
         }

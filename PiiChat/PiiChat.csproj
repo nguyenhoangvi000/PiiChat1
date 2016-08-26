@@ -119,7 +119,7 @@
     <Compile Include="Models\GroupInfoList.cs" />
     <Compile Include="Models\Header.cs" />
     <Compile Include="Models\MessageContent.cs" />
-    <Compile Include="Models\Text.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>

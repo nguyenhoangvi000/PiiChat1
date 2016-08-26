@@ -16,16 +16,16 @@ namespace PiiChat.Models
             HeaderTitle = string.Empty;
         }
 
-        public static ObservableCollection<Text> GetTexts()
+        public static ObservableCollection<User> GetTexts()
         {
-            ObservableCollection<Text> myListContact = new ObservableCollection<Text>();
-            myListContact.Add(new Text("ABC"));
-            myListContact.Add(new Text("AEF"));
-            myListContact.Add(new Text("GHI"));
-            myListContact.Add(new Text("JKL"));
-            myListContact.Add(new Text("MNO"));
-            myListContact.Add(new Text("PQR"));
-            myListContact.Add(new Text("STU"));
+            ObservableCollection<User> myListContact = new ObservableCollection<User>();
+            myListContact.Add(new User("ABC"));
+            myListContact.Add(new User("AEF"));
+            myListContact.Add(new User("GHI"));
+            myListContact.Add(new User("JKL"));
+            myListContact.Add(new User("MNO"));
+            myListContact.Add(new User("PQR"));
+            myListContact.Add(new User("STU"));
             return myListContact;
         }
 
