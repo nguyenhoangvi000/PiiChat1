@@ -34,7 +34,7 @@ namespace PiiChat.Models
             ObservableCollection<GroupInfoList> groups = new ObservableCollection<GroupInfoList>();
 
             var query = from item in GetTexts()
-                        group item by item.Title[0] into g
+                        group item by item.Username[0] into g
                         orderby g.Key
                         select new { GroupName = g.Key, Items = g };
 

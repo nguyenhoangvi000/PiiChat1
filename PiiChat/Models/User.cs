@@ -14,16 +14,16 @@ namespace PiiChat.Models
 
         public User(string name)
         {
-            this.Title = name;
+            this.Username = name;
         }
 
-        public string Title
+        public string Username
         {
             get { return _username; }
             set
             {
                 _username = value;
-                RaisePropertyChanged("Title");
+                RaisePropertyChanged("Username");
             }
         }
 
