@@ -11,7 +11,7 @@
         <Color x:Key="Color1">#002EA1FC</Color>
     </Page.Resources>
 
-    <Grid Background="White" d:IsLocked="True">
+    <Grid Background="White">
         <Image x:Name="image" Height="155" Margin="91,48,98,0" VerticalAlignment="Top" Source="Assets/Square150x150Logo.png"/>
         <Grid Margin="10,208,10,127" BorderThickness="1,1,2,2" Background="White" CornerRadius="3">
             <Grid.BorderBrush>
@@ -29,9 +29,7 @@
             <CheckBox x:Name="ckAccept" Content="Đồng ý điều khoản sử dụng" Margin="25,0,0,58" VerticalAlignment="Bottom" Width="221" Height="32" d:LayoutOverrides="LeftMargin, RightMargin"/>
         </Grid>
         <Grid Height="75" VerticalAlignment="Bottom" Margin="10,0,10,47" d:LayoutOverrides="LeftPosition, RightPosition">
-            <TextBlock x:Name="txtInfo" Height="24" Margin="10,0,0,39" TextWrapping="Wrap" Text="Bạn chưa có tài khoản" VerticalAlignment="Bottom" FontSize="13" HorizontalAlignment="Left" Width="148" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <TextBlock x:Name="txtInfoRegister" Height="24" Margin="142,0,106,39" TextWrapping="Wrap" Text="Đăng kí ngay," VerticalAlignment="Bottom" d:LayoutOverrides="LeftPosition, RightPosition" Foreground="#FF2EA1FC" FontSize="13"/>
-            <TextBlock x:Name="txtInfoForgotPass" Height="24" Margin="0,0,20,39" TextWrapping="Wrap" Text="Lấy lại mật khẩu" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="94" Foreground="#FF2EA1FC" FontSize="13"/>
+            <TextBlock x:Name="txtInfoForgotPass" Height="24" Margin="15,0,20,39" TextWrapping="Wrap" Text="Lấy lại mật khẩu" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="94" Foreground="#FF2EA1FC" FontSize="13"/>
             <TextBlock x:Name="txtInfo1" Height="24" Margin="10,0,0,15" TextWrapping="Wrap" Text="Tải ứng dụng trên" VerticalAlignment="Bottom" FontSize="13" HorizontalAlignment="Left" Width="148" d:LayoutOverrides="HorizontalAlignment, LeftMargin, RightMargin"/>
             <TextBlock x:Name="txtInfoiOS" Height="24" Margin="119,0,0,15" TextWrapping="Wrap" Text="iOS," VerticalAlignment="Bottom" Foreground="#FF2EA1FC" FontSize="13" HorizontalAlignment="Left" Width="34"/>
             <TextBlock x:Name="txtInfoWindows10" Height="24" Margin="146,0,117,15" TextWrapping="Wrap" Text="Windows 10," VerticalAlignment="Bottom" Foreground="#FF2EA1FC" FontSize="13" d:LayoutOverrides="LeftPosition, RightPosition"/>

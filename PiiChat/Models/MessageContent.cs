@@ -13,6 +13,7 @@ namespace PiiChat.Models
         public string content { set; get; }
         public string time { set; get; }
         public string sourceImage { set; get; }
+        public string alignment { set; get; }
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public MessageContent()
@@ -20,11 +21,12 @@ namespace PiiChat.Models
 
         }
 
-        public MessageContent(string v1, string v2, string v3)
+        public MessageContent(string v1, string v2, string v3, string v4)
         {
             this.content = v1;
             this.time = v2;
             this.sourceImage = v3;
+            this.alignment = v4;
         }
 
         public void onPropertyChanged([CallerMemberName] string propertyName = null)
@@ -32,6 +34,6 @@ namespace PiiChat.Models
             this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
+
     }
 }

@@ -40,7 +40,7 @@ namespace PiiChat
 
         public void addMessage(string message)
         {
-            dataSource.Add(new MessageContent(message, DateTime.Now.ToString(), ""));
+            dataSource.Add(new MessageContent(message, DateTime.Now.ToString(), "","Left"));
         }
 
         private void txtMessage_KeyDown(object sender, KeyRoutedEventArgs e)
