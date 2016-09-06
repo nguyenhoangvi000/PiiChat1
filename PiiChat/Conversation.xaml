@@ -7,6 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        
+    </Page.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -14,70 +18,108 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
 
         <Border Grid.Row="0" Background="#2ea1fc">
             <TextBlock Margin="17,17,-1,0" x:Name="txbUsernameTarget" Text="Vĩ Hoàng" SelectionHighlightColor="White" Foreground="White" FontSize="18" FontStretch="UltraCondensed"/>
         </Border>
+        <!--<Border Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">-->
         <Border Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <ListView x:Name="ListMessage" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="Margin" Value="0,3,0,3"/>
-                        <Setter Property="Background" Value="Transparent"></Setter>
-                        <!--<Setter Property="MaxWidth" Value="300"></Setter>-->
-                        <Setter Property="Height" Value="Auto"/>
-                        <Setter Property="Background" Value="{ThemeResource ApplicationPageBackgroundThemeBrush}"></Setter>
-                        <!--<Setter Property="HorizontalAlignment" Value="Right"></Setter>-->
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate>
-                                    <ContentPresenter/>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ListView.ItemContainerStyle>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Ellipse Grid.Column="1" Width="45" Height="45" MaxHeight="45" MinHeight="45">
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="Assets\StoreLogo.png" />
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                                <Grid Padding="0,0,5,0" CornerRadius="5" Grid.Column="0" BorderBrush="#CED6DA" BorderThickness="1" Background="#E5EEF3" Margin="0,0,5,0">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="2*"></RowDefinition>
-                                        <RowDefinition Height="1*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding content}" Padding="15,0,15,0"/>
-                                    <TextBlock Grid.Row="1"  Text="{Binding time}" FontSize="11"  Padding="15,0,15,20"/>
-                                </Grid>
-                                <!--<Image Grid.Column="1" Source="Assets\Wide310x150Logo.scale-200.png" MaxHeight="100" MinHeight="100" Width="Auto" Height="Auto"></Image>-->
-                            </Grid>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Canvas.ZIndex="2" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="3" x:Name="LayerEmoji" Background="LightBlue">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="4*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid x:Name="Title" Grid.Row="0" Background="Violet"></Grid>
+                    <Grid x:Name="Content" Grid.Row="1" Background="LightBlue" Padding="10">
+                        <ListBox x:Name="MetroListBox">
+                            
+                        </ListBox>
+                    </Grid>
+                    
+                </Grid>
+                <Grid Canvas.ZIndex="1" Grid.ColumnSpan="4" Grid.RowSpan="6" x:Name="LayerMessage">
+                    <ListView x:Name="ListMessage" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Margin" Value="0,3,0,3"/>
+                                <Setter Property="Background" Value="Transparent"></Setter>
+                                <!--<Setter Property="MaxWidth" Value="300"></Setter>-->
+                                <Setter Property="Height" Value="Auto"/>
+                                <Setter Property="Background" Value="{ThemeResource ApplicationPageBackgroundThemeBrush}"></Setter>
+                                <!--<Setter Property="HorizontalAlignment" Value="Right"></Setter>-->
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <ContentPresenter/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--Trái phải, đổi column của Grid với eclipse với horizontal-->
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Ellipse Grid.Column="1" Width="45" Height="45" MaxHeight="45" MinHeight="45">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="Assets\StoreLogo.png" />
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <Grid x:Name="ContentMessage" Padding="0,0,5,0" CornerRadius="5" Grid.Column="0" BorderBrush="#CED6DA" BorderThickness="1" Background="#E5EEF3" Margin="0,0,5,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="2*"></RowDefinition>
+                                                <RowDefinition Height="1*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding content}" Padding="15,0,15,0"/>
+                                            <TextBlock Grid.Row="1"  Text="{Binding time}" FontSize="11"  Padding="15,0,15,20"/>
+                                        </Grid>
+                                        <!--<Image Grid.Column="1" Source="Assets\Wide310x150Logo.scale-200.png" MaxHeight="100" MinHeight="100" Width="Auto" Height="Auto"></Image>-->
+                                    </Grid>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Grid>
         </Border>
+        <!--</Border>-->
         <Border BorderThickness="1" Padding="0" Grid.Row="2" Background="{ThemeResource AppBarBorderThemeBrush}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.5*"/>
-                    <ColumnDefinition  Width="9*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition  Width="7*"/>
                     <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" VerticalAlignment="Center" FontFamily="Segoe UI Symbol" HorizontalAlignment="Center" Width="Auto" Text="&#xE11D;"></TextBlock>
-                <TextBox BorderThickness="0" x:Name="txtMessage" VerticalAlignment="Stretch" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" ></TextBox>
-                <Button Background="Transparent" BorderThickness="0" Click="SendMessage" Grid.Column="2" FontSize="14"  Content="&#xE122;" FontFamily="Segoe UI Symbol" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,0,0,0"/>
+                <Button Grid.Column="0" Background="Transparent" Click="ShowEmoji" VerticalAlignment="Center" FontFamily="Segoe UI Symbol" HorizontalAlignment="Center" Width="Auto" Content="&#xE11D;"></Button>
+                <Button Grid.Column="1" Background="Transparent" Click="SelectImage" VerticalAlignment="Center" FontFamily="Segoe UI Symbol" HorizontalAlignment="Center" Width="Auto" Content="&#xE11D;"></Button>
+                <TextBox BorderThickness="0" x:Name="txtMessage" VerticalAlignment="Stretch" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" ></TextBox>
+                <Button Background="Transparent" BorderThickness="0" Click="SendMessage" Grid.Column="3" FontSize="14"  Content="&#xE122;" FontFamily="Segoe UI Symbol" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,0,0,0"/>
             </Grid>
         </Border>
 

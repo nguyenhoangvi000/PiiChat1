@@ -40,7 +40,7 @@ namespace PiiChat
 
         public void addMessage(string message)
         {
-            dataSource.Add(new MessageContent(message, DateTime.Now.ToString(), "","Left"));
+            dataSource.Add(new MessageContent(message, DateTime.Now.ToString(), "", "Left"));
         }
 
         private void txtMessage_KeyDown(object sender, KeyRoutedEventArgs e)
@@ -49,6 +49,23 @@ namespace PiiChat
             {
                 SendMessage(sender, e);
             }
+        }
+
+        private void ShowEmoji(object sender, RoutedEventArgs e)
+        {
+            if (LayerEmoji.Visibility == Visibility.Collapsed)
+            {
+                LayerEmoji.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                LayerEmoji.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void SelectImage(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
