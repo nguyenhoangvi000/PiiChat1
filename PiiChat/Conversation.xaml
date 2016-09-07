@@ -8,22 +8,31 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Name="MovieTemplate">
-            <StackPanel>
-                <Rectangle Fill="Aqua" Width="50" Height="40"></Rectangle>
-            </StackPanel>
-        </DataTemplate>
-        <DataTemplate x:Name="GridViewCustomTemplate">
-            <StackPanel Orientation="Vertical">
-                <Image x:Name="Stickers" 
-                             Width ="560"
-                             Height="560"
-                             VerticalAlignment="Center"
+        
+        
+
+
+        <Style TargetType="GridViewItem">
+            <Setter Property="MaxHeight" Value="60"></Setter>
+            <Setter Property="MaxWidth" Value="60"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="GridViewItem">
+                        <StackPanel Orientation="Vertical">
+                            <Image x:Name="Stickers" 
+                             Width ="Auto"
+                             Height="Auto"
                              HorizontalAlignment="Center"
-                             Source="Assets\Square150x150Logo.scale-200.png"
+                             VerticalAlignment="Center"
+                             Source="Assets\LockScreenLogo.scale-200.png"
                              Margin="10"/>
-            </StackPanel>
-        </DataTemplate>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid>
@@ -63,7 +72,7 @@
                         <RowDefinition Height="4*"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Grid x:Name="Title" Grid.Row="0" Background="Violet">
+                    <Grid x:Name="Title" Grid.Row="0" VerticalAlignment="Center" Background="Violet">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="auto" />
@@ -74,46 +83,45 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="30" />
                             </Grid.ColumnDefinitions>
-                            <Button VerticalAlignment="Stretch" Grid.Column="0"  >Prev</Button>
-                            <Button VerticalAlignment="Stretch" Grid.Column="2" HorizontalAlignment="Stretch" >Next</Button>
-                            <ListView  Grid.Column="1" ItemTemplate="{StaticResource MovieTemplate}">
+                            <Button VerticalAlignment="Stretch" Grid.Column="0"  >P</Button>
+                            <Button VerticalAlignment="Stretch" Grid.Column="2" HorizontalAlignment="Stretch" >N</Button>
+                            <ListView  Grid.Column="1">
                                 <ListView.ItemContainerStyle>
                                     <Style TargetType="ListViewItem">
-                                        <Setter Property="Width" Value="Auto"></Setter>
+                                        <Setter Property="MaxHeight" Value="40"></Setter>
+                                        <Setter Property="MaxWidth" Value="40"></Setter>
+                                        <Setter Property="Margin" Value="7,0"></Setter>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListViewItem">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="Assets\SplashScreen.scale-200.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40"></Image>
+                                                    </StackPanel>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
                                     </Style>
+                                    
                                 </ListView.ItemContainerStyle>
                                 <ListView.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel Orientation="Horizontal"></StackPanel>
                                     </ItemsPanelTemplate>
                                 </ListView.ItemsPanel>
-                                <ListViewItem>
-                                    <Rectangle Fill="Aqua" Height="40" Width="50"></Rectangle>
-                                </ListViewItem>
-                                <ListViewItem>
-                                    <Rectangle Fill="Aqua" Height="40" Width="50"></Rectangle>
-                                </ListViewItem>
-                                <ListViewItem>
-                                    <Rectangle Fill="Aqua" Height="40" Width="50"></Rectangle>
-                                </ListViewItem>
-                                <ListViewItem>
-                                    <Rectangle Fill="Aqua" Height="40" Width="50"></Rectangle>
-                                </ListViewItem>
-                                <ListViewItem>
-                                    <Rectangle Fill="Aqua" Height="40" Width="50"></Rectangle>
-                                </ListViewItem>
-                                <ListViewItem>
-                                    <Rectangle Fill="Aqua" Height="40" Width="50"></Rectangle>
-                                </ListViewItem>
+                                <ListViewItem></ListViewItem>
+                                <ListViewItem></ListViewItem>
+                                <ListViewItem></ListViewItem>
                             </ListView>
                         </Grid>
                     </Grid>
                     <Grid x:Name="Content" Grid.Row="1"  Padding="10">
-                        <GridView Background="MintCream" ItemTemplate="{StaticResource GridViewCustomTemplate}">
-                            <GridViewItem>Test</GridViewItem>
-                            <GridViewItem>Test</GridViewItem>
-                            <GridViewItem>Test</GridViewItem>
-                            
+                        <GridView Background="MintCream">
+                            <GridViewItem></GridViewItem>
+                            <GridViewItem></GridViewItem>
+                            <GridViewItem></GridViewItem>
+                            <GridViewItem></GridViewItem>
+                            <GridViewItem></GridViewItem>
+                            <GridViewItem></GridViewItem>
                         </GridView>
                     </Grid>
                     <!--<FlipView Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
